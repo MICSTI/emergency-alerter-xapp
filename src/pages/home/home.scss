@@ -1,0 +1,17 @@
+page-home {
+  p {
+    text-align: center;
+  }
+
+  p img {
+    width: 75%;
+    height: auto;
+  }
+
+  @media screen and (min-width: 640px) {
+    p img {
+      width: 357px;
+      height: auto;
+    }
+  }
+}
