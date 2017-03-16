@@ -1,11 +1,19 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Home</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <p>
-    <img src="../../assets/img/logo.png" />
-  </p>
+    <p>
+        <img src="../../assets/img/logo.png" />
+    </p>
+
+    <ion-card>
+        <ion-card-header>
+            <ion-icon name="navigate"></ion-icon>
+            Current location
+        </ion-card-header>
+        <ion-card-content>{{getFormattedLocation()}}</ion-card-content>
+    </ion-card>
 </ion-content>

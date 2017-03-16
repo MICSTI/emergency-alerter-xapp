@@ -7,6 +7,7 @@ import { MapPage } from '../pages/map/map';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PoliceStationService } from './service/police-station.service';
+import { LocationService } from './service/location.service';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,6 @@ import { PoliceStationService } from './service/police-station.service';
     MapPage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, PoliceStationService ]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, PoliceStationService, LocationService ]
 })
 export class AppModule {}
