@@ -3,8 +3,8 @@ import { OnInit } from '@angular/core'
 
 import { NavController } from 'ionic-angular';
 
-import { PoliceStation } from '../../app/PoliceStation';
-import { PoliceStationService } from '../../app/police-station.service';
+import { PoliceStation } from '../../app/model/PoliceStation';
+import { PoliceStationService } from '../../app/service/police-station.service';
 
 @Component({
   selector: 'page-map',
