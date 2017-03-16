@@ -28,13 +28,22 @@ export class MapPage implements OnInit {
                 this.fetchPoliceStations(location);
             })
             .catch(err => {
+                console.error(err);
+
                 this.presentToast("Unfortunately, we were not able to locate the police stations around you.");
             });
     }
 
     public fetchPoliceStations(location: Location): void {
         this.policeStationService.getPoliceStationsNearby(location, AppSettings.POLICE_STATION_RADIUS_METRES)
-            .subscribe(policeStations => this.policeStations = policeStations);
+            .subscribe(
+                (policeStations) => this.policeStations = policeStations,
+                (err) => {
+                    console.error(err);
+
+                    this.presentToast("Unfortunately, we were not able to communicate with the police station server.");
+                }
+            );
 
         // MOCK CALL (in case API is not available)
         //this.policeStationService.getPoliceStationsNearbyMock().then(policeStations => this.policeStations = policeStations);

@@ -16,14 +16,13 @@ export class PoliceStationService {
 
     public getPoliceStationsNearby(location: Location, radius: number): Observable<PoliceStation[]> {
         return this.http.get(AppSettings.API_ENDPOINT + '/nearest/police?lat=' + location.lat + '&lng=' + location.lng + '&radius=' + radius)
-            .map((responseData) => {
-                return responseData.json();
-            })
+            .map(res => res.json())
             .map((jsonResponse: any) => {
                 if (jsonResponse.status === "success") {
                     return jsonResponse.data;
                 } else {
-                    // TODO handle error case?
+                    console.error('Error response from API', jsonResponse);
+                    
                     return [];
                 }
             })
