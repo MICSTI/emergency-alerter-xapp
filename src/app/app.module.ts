@@ -6,6 +6,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { MapPage } from '../pages/map/map';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { PoliceStationService } from './police-station.service';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,6 @@ import { TabsPage } from '../pages/tabs/tabs';
     MapPage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, PoliceStationService ]
 })
 export class AppModule {}
