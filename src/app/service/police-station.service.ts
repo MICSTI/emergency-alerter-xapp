@@ -12,6 +12,12 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class PoliceStationService {
 
+    public static mockPoliceStations: PoliceStation[] = [
+      { name: "Polizeiinspektion Graz - Wiener Straße", location: { lat: 47.0897329, lng: 15.4100455 } },
+      { name: "Polizeiinspektion Graz-Andritz", location: { lat: 47.1033302, lng: 15.4229339 } },
+      { name: "Polizeiinspektion Graz-Lendplatz", location: { lat: 47.0765347, lng: 15.4287876 } }
+    ];
+
     constructor(private http: Http) {}
 
     public getPoliceStationsNearby(location: Location, radius: number): Observable<PoliceStation[]> {
@@ -22,7 +28,7 @@ export class PoliceStationService {
                     return jsonResponse.data;
                 } else {
                     console.error('Error response from API', jsonResponse);
-                    
+
                     return [];
                 }
             })
@@ -32,10 +38,6 @@ export class PoliceStationService {
     }
 
     public static getPoliceStationsNearbyMock(): Promise<PoliceStation[]> {
-        return Promise.resolve([
-            { name: "Polizeiinspektion Graz - Wiener Straße", location: { lat: 47.0897329, lng: 15.4100455 } },
-            { name: "Polizeiinspektion Graz-Andritz", location: { lat: 47.1033302, lng: 15.4229339 } },
-            { name: "Polizeiinspektion Graz-Lendplatz", location: { lat: 47.0765347, lng: 15.4287876 } }
-        ]);
+        return Promise.resolve(PoliceStationService.mockPoliceStations);
     }
 }

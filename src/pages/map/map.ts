@@ -41,7 +41,10 @@ export class MapPage implements OnInit {
                 (err) => {
                     console.error(err);
 
-                    this.presentToast("Unfortunately, we were not able to communicate with the police station server.");
+                    // get the mock stations instead
+                   this.policeStations = PoliceStationService.mockPoliceStations;
+
+                    this.presentToast("We currently cannot reach the API server, so we are showing you some demo data.");
                 }
             );
 
