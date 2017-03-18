@@ -39,6 +39,7 @@
     "cordova-plugin-device",
     "cordova-plugin-splashscreen",
     "cordova-plugin-geolocation",
+    "cordova-plugin-network-information",
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [],

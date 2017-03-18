@@ -10,4 +10,7 @@ export class AppSettings {
 
     // default time for displaying toasts
     public static TOAST_DEFAULT_DURATION = 3000;
+
+    // Google Maps zoom level
+    public static GOOGLE_MAPS_ZOOM_LEVEL = 12;
 }

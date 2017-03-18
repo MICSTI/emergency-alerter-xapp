@@ -6,11 +6,15 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<!--<ion-content padding>
   <ion-list>
     <ion-list-header>Nearby police stations</ion-list-header>
     <ion-item *ngFor="let station of policeStations">
       {{station.name}}
     </ion-item>
   </ion-list>
+</ion-content>-->
+
+<ion-content>
+  <div #map id="map"></div>
 </ion-content>
