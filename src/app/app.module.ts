@@ -8,7 +8,10 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PoliceStationService } from './service/police-station.service';
 import { LocationService } from './service/location.service';
+import { ContactService } from './service/contact.service';
 import { GoogleMaps } from "../providers/google-maps";
+import { IonicStorageModule } from '@ionic/storage';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { GoogleMaps } from "../providers/google-maps";
     TabsPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot({name: '__contacts'})
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -31,6 +35,6 @@ import { GoogleMaps } from "../providers/google-maps";
     MapPage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, PoliceStationService, LocationService, GoogleMaps]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, PoliceStationService, LocationService, GoogleMaps, ContactService]
 })
 export class AppModule {}

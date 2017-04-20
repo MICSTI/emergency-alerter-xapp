@@ -1,11 +1,28 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Settings
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Contacts
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="addContact()"><ion-icon name="add"></ion-icon></button>
+    </ion-buttons>
+    </ion-navbar>
 </ion-header>
 
 <ion-content>
-
+    <ion-list  >
+        <ion-item-sliding *ngFor="let contact of contactService.contactList">
+ 
+            <ion-item>
+                {{contact.name}}
+            </ion-item>
+ 
+            <ion-item-options>
+                <button ion-button icon-only (click)="deleteContact(contact)" danger>
+                    <ion-icon name="trash"></ion-icon>
+                </button>
+            </ion-item-options>
+ 
+        </ion-item-sliding>
+    </ion-list>
 </ion-content>
