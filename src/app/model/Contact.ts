@@ -1,4 +1,4 @@
-export class Contact {
+export class EmergencyContact {
   name: string;
   telNumber: string;
 }

@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-
 import { Storage } from '@ionic/storage';
-import { Contact } from '../model/Contact';
+import { EmergencyContact } from '../model/Contact';
 
 
 @Injectable()
 export class ContactService {
     
-    public contactList: Contact[]=[];
+    public contactList: EmergencyContact[]=[];
     
     constructor(private storage: Storage) {
         this.loadContacts().then(contacts => {
@@ -15,19 +14,19 @@ export class ContactService {
         });
     }
 
-    private loadContacts(): Promise<Contact[]>{
+    private loadContacts(): Promise<EmergencyContact[]>{
        return this.storage.get('contacts').then((val) => {
-            let contacts: Contact[] = JSON.parse(val);
+            let contacts: EmergencyContact[] = JSON.parse(val);
            return contacts;
        });
     }
     
-    public getContacts(): Contact[]{
+    public getContacts(): EmergencyContact[]{
         return this.contactList;
     }
     
     //Return the updated list of contacts
-    public addContact(newContact: Contact) {
+    public addContact(newContact: EmergencyContact) {
         this.contactList.push(newContact);
         this.contactList.sort(function(first, second) {
             return first.name.localeCompare(second.name);
