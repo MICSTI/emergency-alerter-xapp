@@ -1,17 +1,24 @@
 page-home {
-  p {
-    text-align: center;
-  }
 
-  p img {
-    width: 75%;
-    height: auto;
-  }
+    ion-content {
+            background-color: lightgray !important;
 
-  @media screen and (min-width: 640px) {
-    p img {
-      width: 357px;
-      height: auto;
     }
+    
+  button {
+    height: auto;
+    min-height: 50%;
+    font-size: 5em !important;
   }
+    ion-card {
+        margin-top: 100px;
+    }
+    
+    .bottomized {
+        position: absolute;
+        bottom: 60px;
+        width: 100%;
+        text-align: center;
+    }
+    
 }

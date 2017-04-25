@@ -20,11 +20,7 @@ export class ContactService {
            return contacts;
        });
     }
-    
-    public getContacts(): EmergencyContact[]{
-        return this.contactList;
-    }
-    
+        
     //Return the updated list of contacts
     public addContact(newContact: EmergencyContact) {
         
