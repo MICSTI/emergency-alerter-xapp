@@ -13,6 +13,7 @@ import { GoogleMaps } from "../providers/google-maps";
 import { IonicStorageModule } from '@ionic/storage';
 import { Contacts } from '@ionic-native/contacts';
 import { SMS } from '@ionic-native/sms';
+import { Geolocation } from '@ionic-native/geolocation';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,6 @@ import { SMS } from '@ionic-native/sms';
     MapPage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, PoliceStationService, LocationService, GoogleMaps, ContactService, Contacts, SMS]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},Geolocation, PoliceStationService, LocationService, GoogleMaps, ContactService, Contacts, SMS]
 })
 export class AppModule {}
