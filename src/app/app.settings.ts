@@ -3,7 +3,7 @@
  */
 export class AppSettings {
     // Base URL of the API endpoint
-    public static API_ENDPOINT = "http://localhost:8144/api";
+    public static API_ENDPOINT = "https://crpladev-emal.herokuapp.com/api";
 
     // radius where police stations should be located
     public static POLICE_STATION_RADIUS_METRES = 10000;
