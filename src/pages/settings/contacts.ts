@@ -9,7 +9,7 @@ import { Contacts, Contact} from '@ionic-native/contacts';
   templateUrl: 'settings.html',
 
 })
-export class SettingsPage {
+export class ContactsPage {
         
   constructor(public navCtrl: NavController, private contactService: ContactService, private contacts: Contacts) {  }
   
