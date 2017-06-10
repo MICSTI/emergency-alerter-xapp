@@ -6,7 +6,7 @@ import { Contacts, Contact} from '@ionic-native/contacts';
  
 @Component({
   selector: 'page-settings',
-  templateUrl: 'settings.html',
+  templateUrl: 'contacts.html',
 
 })
 export class ContactsPage {
