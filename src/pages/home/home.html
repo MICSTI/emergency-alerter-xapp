@@ -10,13 +10,16 @@
         <ion-icon name="alert"></ion-icon>
     </button>
 </ion-content>
-<section class="bottomized"> 
+<section class="bottomized">
     <ion-card >
         <ion-card-header>
             <ion-icon name="navigate"></ion-icon>
             Current location
         </ion-card-header>
-        <ion-card-content>{{getFormattedLocation()}}</ion-card-content>
+        <ion-card-content>
+          <p *ngIf="getAddress() !== ''">{{getAddress()}}</p>
+          <p>{{getFormattedLocation()}}</p>
+        </ion-card-content>
     </ion-card>
 </section>
-  
+
